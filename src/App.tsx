@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import React from "react";
+import Header from "./Header";
+import AppContainer from "./AppContainer";
+import Home from "./components/Home";
+import { Form } from "./components/Form";
 
 function App() {
+  // const spinStyle = { animation: "spin 2s linear infinite" };
+  const [state, setstate] = useState("Home");
+
+  const openForm = () => {
+    setstate("FORM");
+  };
+
+  const closeForm = () => {
+    setstate("HOME");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <div className="p-4 mx-auto bg-white shadow-lg rounded-xl">
+        <Header title="welcome to #react-typescript with #tailwind" />
+        {state === "Home" ? <Home openFormCB={openForm} /> : <Form closeFormCB={closeForm} />}
+      </div>
+    </AppContainer>
   );
 }
 

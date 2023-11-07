@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// const divContainer = (
+//   <div className="flex h-screen bg-gray-100 items-center justify-center">
+//     <h1 id="heading" className="text-xl text-center py-4">
+//       Hello World
+//     </h1>
+//   </div>
+// );
+
+// ReactDOM.render(divContainer, document.getElementById("root"));
+
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
+  // divContainer
   <React.StrictMode>
     <App />
   </React.StrictMode>
